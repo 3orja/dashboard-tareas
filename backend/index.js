@@ -6,7 +6,7 @@ const app = express();
 app.use(cors());
 app.use(express.json());
 
-// Cambiar /tasks a /api/tasks para que coincida con lo que espera el frontend
+
 app.get('/api/tasks', (req, res) => {
   res.json(tasks.getTasks());
 });
