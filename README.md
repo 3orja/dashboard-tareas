@@ -21,7 +21,7 @@ El Dashboard de Tareas es una aplicación web completa para gestionar tareas y a
 
 El proyecto sigue una arquitectura de microservicios, dividida en:
 
-- **Frontend:** Cliente Angular (v17+) con componentes standalone
+- **Frontend:** Cliente Angular (v20+) con componentes standalone
 - **Backend:** API REST desarrollada con Express.js
 - **Infraestructura:** Contenedores Docker con nginx para el frontend
 
