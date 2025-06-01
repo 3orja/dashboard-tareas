@@ -51,7 +51,7 @@ El proyecto sigue una arquitectura de microservicios, dividida en:
 ### Con Docker (Recomendado)
 
 1. Clona el repositorio:
-git clone https://github.com/tu-usuario/dashboard-tareas.git cd dashboard-tareas
+git clone https://github.com/3orja/dashboard-tareas.git cd dashboard-tareas
 
 2. Inicia los contenedores con Docker Compose:
 docker-compose up --build
