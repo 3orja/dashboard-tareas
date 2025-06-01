@@ -51,7 +51,7 @@ El proyecto sigue una arquitectura de microservicios, dividida en:
 ### Con Docker (Recomendado)
 
 1. Clona el repositorio:
-git clone https://github.com/3orja/dashboard-tareas.git
+git clone https://github.com/3orja/dashboard-tareas.git :
 cd dashboard-tareas
 
 3. Inicia los contenedores con Docker Compose:
@@ -63,36 +63,14 @@ http://localhost:4200/task
 ### Para Desarrollo
 
 #### Frontend
-cd frontend npm install npm start
+cd frontend: npm install npm start
 La aplicación estará disponible en `http://localhost:4200/task`
 
 #### Backend
-cd backend npm install npm start
+cd backend: npm install npm start
 
 La API estará disponible en `http://localhost:3000/task`
 
-## 📂 Estructura del Proyecto
-dashboard-tareas/
-├── frontend/
-│   ├── src/
-│   │   ├── app/
-│   │   │   ├── components/
-│   │   │   ├── models/
-│   │   │   ├── services/
-│   │   │   ├── app.ts
-│   │   │   └── app.routes.ts
-│   │   ├── assets/
-│   │   └── styles.css
-│   ├── dockerfile
-│   ├── nginx.conf
-│   └── package.json
-├── backend/
-│   ├── index.js
-│   ├── tasks.js
-│   ├── dockerfile
-│   └── package.json
-├── docker-compose.yml
-└── README.md
 
 ## 🔌 API Endpoints
 
