@@ -1,0 +1,22 @@
+<div class="dashboard-container">
+  <h1>Dashboard de Tareas</h1>
+  
+  <div class="dashboard-actions">
+    <button class="btn btn-primary" (click)="openNewTaskForm()">Nueva Tarea</button>
+  </div>
+  
+  <div class="tasks-container">
+    <app-task-list [tasks]="tasks" 
+                   (taskDeleted)="deleteTask($event)" 
+                   (taskEdited)="editTask($event)"
+                   (taskCompleted)="toggleTaskCompletion($event)">
+    </app-task-list>
+  </div>
+  
+  <div *ngIf="showTaskForm" class="task-form-container">
+    <app-task-form [taskToEdit]="currentTask" 
+                   (formClosed)="closeTaskForm()"
+                   (taskSaved)="saveTask($event)">
+    </app-task-form>
+  </div>
+</div>

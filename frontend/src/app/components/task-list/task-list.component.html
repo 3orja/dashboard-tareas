@@ -1,0 +1,27 @@
+<div class="task-list">
+    <h2>Lista de Tareas</h2>
+    
+    <div *ngIf="tasks.length === 0" class="no-tasks">
+      No hay tareas disponibles
+    </div>
+    
+    <div *ngFor="let task of tasks" class="task-item" [ngClass]="{'completed': task.completed}">
+      <div class="task-header">
+        <h3>{{ task.title }}</h3>
+        <div class="task-actions">
+          <button class="btn btn-sm btn-success" (click)="onTaskCompleted(task)">
+            {{ task.completed ? 'Desmarcar' : 'Completar' }}
+          </button>
+          <button class="btn btn-sm btn-primary" (click)="onTaskEdit(task)">Editar</button>
+          <button class="btn btn-sm btn-danger" (click)="task.id && onTaskDelete(task.id)">Eliminar</button>
+        </div>
+      </div>
+      
+      <p>{{ task.description }}</p>
+      
+      <div class="task-details">
+        <span class="priority" [ngClass]="task.priority">{{ task.priority }}</span>
+        <span class="due-date" *ngIf="task.dueDate">Fecha límite: {{ task.dueDate | date }}</span>
+      </div>
+    </div>
+  </div>

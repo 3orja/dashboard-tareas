@@ -1,0 +1,44 @@
+<div class="task-form">
+    <h2>{{ taskToEdit ? 'Editar Tarea' : 'Nueva Tarea' }}</h2>
+    
+    <form [formGroup]="taskForm" (ngSubmit)="onSubmit()">
+      <div class="form-group">
+        <label for="title">Título</label>
+        <input type="text" id="title" formControlName="title" class="form-control">
+        <div *ngIf="taskForm.get('title')?.invalid && taskForm.get('title')?.touched" class="error-message">
+          Título es requerido
+        </div>
+      </div>
+      
+      <div class="form-group">
+        <label for="description">Descripción</label>
+        <textarea id="description" formControlName="description" class="form-control"></textarea>
+      </div>
+      
+      <div class="form-group">
+        <label for="priority">Prioridad</label>
+        <select id="priority" formControlName="priority" class="form-control">
+          <option value="low">Baja</option>
+          <option value="medium">Media</option>
+          <option value="high">Alta</option>
+        </select>
+      </div>
+      
+      <div class="form-group">
+        <label for="dueDate">Fecha Límite</label>
+        <input type="date" id="dueDate" formControlName="dueDate" class="form-control">
+      </div>
+      
+      <div class="form-group form-check">
+        <input type="checkbox" id="completed" formControlName="completed" class="form-check-input">
+        <label for="completed" class="form-check-label">Completada</label>
+      </div>
+      
+      <div class="form-actions">
+        <button type="submit" [disabled]="taskForm.invalid" class="btn btn-success">
+          {{ taskToEdit ? 'Actualizar' : 'Crear' }}
+        </button>
+        <button type="button" class="btn btn-secondary" (click)="onCancel()">Cancelar</button>
+      </div>
+    </form>
+  </div>
